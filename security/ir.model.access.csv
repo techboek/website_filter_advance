@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+website_filter_advanced.access_product_filter,access_product_filter,website_filter_advanced.model_product_filter,base.group_user,1,1,1,1
+website_filter_advanced.access_product_filter_value,access_product_filter_value,website_filter_advanced.model_product_filter_value,base.group_user,1,1,1,1
+website_filter_advanced.access_product_filter_line,access_product_filter_line,website_filter_advanced.model_product_filter_line,base.group_user,1,1,1,1

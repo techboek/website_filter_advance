@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <!-- Action pour les filtres -->
+    <record id="action_product_filter" model="ir.actions.act_window">
+        <field name="name">Filters</field>
+        <field name="res_model">product.filter</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Lien vers le menu -->
+    <menuitem id="menu_product_filter"
+              name="Filters"
+              parent="sale.prod_config_main"
+              action="action_product_filter"
+              sequence="100"/>
+</odoo>
+
