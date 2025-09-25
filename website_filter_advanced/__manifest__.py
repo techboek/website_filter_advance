@@ -11,7 +11,6 @@
     'license': 'LGPL-3',
     'price': 100,
     'currency': 'EUR',
-    'images': ['static/banner.png'],
     'data': [
         'security/ir.model.access.csv',
         'security/rules.xml',
