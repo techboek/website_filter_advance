@@ -1,0 +1,186 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_filter_advanced
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-27 23:57+0000\n"
+"PO-Revision-Date: 2025-09-27 23:57+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_filter_advanced
+#: model_terms:ir.ui.view,arch_db:website_filter_advanced.products_custom_filters
+msgid "<option value=\"\">Select...</option>"
+msgstr "<option value=\"\">Seleccionar…</option>"
+
+#. module: website_filter_advanced
+#: model_terms:ir.ui.view,arch_db:website_filter_advanced.products_custom_filters
+msgid ""
+"<small class=\"mx-auto\">\n"
+"                        <b>Clear Filters</b>\n"
+"                    </small>\n"
+"                    <i class=\"oi oi-close\"/>"
+msgstr "<small class=\"mx-auto\">\n                        <b>Borrar filtros</b>\n                    </small>\n                    <i class=\"oi oi-close\"/>"
+
+#. module: website_filter_advanced
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value__html_color
+#: model:ir.model.fields.selection,name:website_filter_advanced.selection__product_filter__type__color
+msgid "Color"
+msgstr "Color"
+
+#. module: website_filter_advanced
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value__color
+msgid "Color Index"
+msgstr "Índice de color"
+
+#. module: website_filter_advanced
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: website_filter_advanced
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter__create_uid
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_line__create_uid
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: website_filter_advanced
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter__create_date
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_line__create_date
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: website_filter_advanced
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter__display_name
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_line__display_name
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: website_filter_advanced
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_line__filter_id
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value__filter_id
+#: model_terms:ir.ui.view,arch_db:website_filter_advanced.view_product_filter_form
+msgid "Filter"
+msgstr "Filtro"
+
+#. module: website_filter_advanced
+#: model_terms:ir.ui.view,arch_db:website_filter_advanced.view_product_filter_list
+msgid "Filter List"
+msgstr "Lista de filtros"
+
+#. module: website_filter_advanced
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter__name
+msgid "Filter name"
+msgstr "Nombre del filtro"
+
+#. module: website_filter_advanced
+#: model_terms:ir.ui.view,arch_db:website_filter_advanced.view_product_filter_value_form
+#: model_terms:ir.ui.view,arch_db:website_filter_advanced.view_product_filter_value_list
+msgid "Filter values"
+msgstr "Valores de filtro"
+
+#. module: website_filter_advanced
+#: model:ir.actions.act_window,name:website_filter_advanced.action_product_filter
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_product__filter_line_ids
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_template__filter_line_ids
+#: model:ir.ui.menu,name:website_filter_advanced.menu_product_filter
+#: model_terms:ir.ui.view,arch_db:website_filter_advanced.view_product_template_form_inherit_filters
+msgid "Filters"
+msgstr "Filtros"
+
+#. module: website_filter_advanced
+#: model:ir.model.fields,help:website_filter_advanced.field_product_filter_value__html_color
+msgid ""
+"Here you can set a specific HTML color index (e.g. #ff0000) to display the "
+"color if the attribute type is 'Color'."
+msgstr ""
+"Aquí puede establecer un código de color HTML específico (por ejemplo "
+"#ff0000) para mostrar el color si el tipo de atributo es «Color»."
+
+#. module: website_filter_advanced
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter__id
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_line__id
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value__id
+msgid "ID"
+msgstr "ID"
+
+#. module: website_filter_advanced
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter__write_uid
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_line__write_uid
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: website_filter_advanced
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter__write_date
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_line__write_date
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: website_filter_advanced
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter__value_ids
+msgid "Possible values"
+msgstr "Valores posibles"
+
+#. module: website_filter_advanced
+#: model:ir.model,name:website_filter_advanced.model_product_template
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_line__product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: website_filter_advanced
+#: model:ir.model,name:website_filter_advanced.model_product_filter
+msgid "Product Filter"
+msgstr "Filtro de producto"
+
+#. module: website_filter_advanced
+#: model:ir.model,name:website_filter_advanced.model_product_filter_line
+msgid "Product Filter Line"
+msgstr "Línea de filtro de producto"
+
+#. module: website_filter_advanced
+#: model:ir.model,name:website_filter_advanced.model_product_filter_value
+msgid "Product Filter Value"
+msgstr "Valor de filtro de producto"
+
+#. module: website_filter_advanced
+#: model:ir.model.fields.selection,name:website_filter_advanced.selection__product_filter__type__radio
+msgid "Radio"
+msgstr "Radio"
+
+#. module: website_filter_advanced
+#: model:ir.model.fields.selection,name:website_filter_advanced.selection__product_filter__type__select
+msgid "Select"
+msgstr "Selección"
+
+#. module: website_filter_advanced
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: website_filter_advanced
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter__type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: website_filter_advanced
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value__name
+msgid "Value"
+msgstr "Valor"
+
+#. module: website_filter_advanced
+#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_line__value_ids
+#: model_terms:ir.ui.view,arch_db:website_filter_advanced.view_product_filter_form
+msgid "Values"
+msgstr "Valores"

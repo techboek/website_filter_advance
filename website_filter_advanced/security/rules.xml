@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Règle pour Product Filter -->
+    <record id="product_filter_company_rule" model="ir.rule">
+        <field name="name">Product Filter: Access by Company or Global</field>
+        <field name="model_id" ref="website_filter_advanced.model_product_filter"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+    </record>
+</odoo>

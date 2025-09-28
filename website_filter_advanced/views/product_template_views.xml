@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_product_template_form_inherit_filters" model="ir.ui.view">
+        <field name="name">product.template.form.inherit.filters</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Filters">
+                    <field name="filter_line_ids">
+                        <list editable="bottom">
+                            <field name="filter_id" attrs="{'readonly': [('id', '!=', False)]}"/>
+                            <field name="value_ids" widget="many2many_tags" options="{'no_create_edit': True, 'color_field': 'color'}" context="{'default_filter_id': filter_id, 'show_filter': False}"/>
+                        </list>
+                    </field>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>
+

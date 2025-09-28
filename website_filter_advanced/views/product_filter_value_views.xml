@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_product_filter_value_list" model="ir.ui.view">
+        <field name="name">product.filter.value.list</field>
+        <field name="model">product.filter.value</field>
+        <field name="arch" type="xml">
+            <list string="Filter values">
+                <field name="name"/>
+                <field name="filter_id"/>
+                <field name="sequence"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_product_filter_value_form" model="ir.ui.view">
+        <field name="name">product.filter.value.form</field>
+        <field name="model">product.filter.value</field>
+        <field name="arch" type="xml">
+            <form string="Filter values">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="filter_id"/>
+                        <field name="sequence"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
+
+
