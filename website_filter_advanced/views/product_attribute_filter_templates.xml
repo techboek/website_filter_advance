@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="products_custom_filters" inherit_id="website_sale.products" name="Product filters">
+        <xpath expr="//div[hasclass('o_wsale_products_grid_before_rail')]//div[last()]" position="before">
+            <form t-if="custom_filters" class="js_filters" method="get">
+                <input t-if="category" type="hidden" name="category" t-att-value="category.id"/>
+                <input type="hidden" name="search" t-att-value="search"/>
+                <input type="hidden" name="order" t-att-value="order"/>
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                <!-- Bouton clear filter -->
+                <a t-if="filter_values"
+                   t-att-href="keep('/shop'+ ('/category/'+slug(category)) if category else None, filter=0)"
+                   class="btn btn-outline-secondary btn-sm d-flex py-1 mb-2">
+                    <small class="mx-auto">
+                        <b>Clear Filters</b>
+                    </small>
+                    <i class="oi oi-close"/>
+                </a>
+
+                <!-- Boucle sur les filtres dynamiques -->
+                <t t-foreach="custom_filters.items()" t-as="item">
+                    <t t-set="f" t-value="item[0]"/>
+                    <t t-set="values" t-value="item[1]"/>
+
+                    <t t-if="values and len(values) &gt; 0">
+
+                        <div id="wsale_products_custom_filters" class="accordion accordion-flush border-bottom">
+                            <div class="accordion-item nav-item rounded-0">
+                                <h6 class="accordion-header">
+                                    <button
+                                            class="accordion-button px-0 bg-transparent shadow-none collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            t-attf-data-bs-target="#o_products_filters_{{f.id}}"
+                                            t-attf-aria-controls="o_products_filters_{{f.id}}"
+                                            aria-expanded="true">
+                                        <b t-field="f.name"/>
+                                    </button>
+                                </h6>
+
+                                <div t-attf-id="o_products_filters_{{f.id}}" class="accordion-collapse collapse show">
+                                    <div class="mb-2">
+                                        <!-- Cas Radio -->
+                                        <t t-if="f.type == 'radio'">
+                                            <t t-foreach="values" t-as="v">
+                                                <div class="form-check">
+                                                    <input type="checkbox" name="filter" class="form-check-input"
+                                                           t-att-id="'%s-%s' % (f.id, v.id)"
+                                                           t-att-value="'%s-%s' % (f.id, v.id)"
+                                                           t-att-checked="'checked' if ('%s-%s' % (f.id, v.id)) in filter_values else None"/>
+                                                    <label class="form-check-label fw-normal"
+                                                           t-att-for="'%s-%s' % (f.id, v.id)">
+                                                        <t t-esc="v.name"/>
+                                                    </label>
+                                                </div>
+                                            </t>
+                                        </t>
+
+                                        <!-- Cas Select -->
+                                        <t t-if="f.type == 'select'">
+                                            <select class="form-select css_attribute_select" name="filter">
+                                                <option value="">Select...</option>
+                                                <t t-foreach="values" t-as="v">
+                                                    <option t-att-value="'%s-%s' % (f.id,v.id)"
+                                                            t-esc="v.name"
+                                                            t-att-selected="('%s-%s' % (f.id, v.id)) in filter_values"/>
+                                                </t>
+                                            </select>
+                                        </t>
+
+                                        <!-- Cas Color -->
+                                        <t t-if="f.type == 'color'">
+                                            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                                <t t-foreach="values" t-as="v">
+                                                    <label t-attf-style="background-color: #{v.html_color or 'ccc'}"
+                                                           t-attf-class="css_attribute_color mb-1 #{'active' if ('%s-%s' % (f.id, v.id)) in filter_values else ''}"
+                                                           t-att-title="v.name">
+                                                        <input type="checkbox" name="filter"
+                                                               class="d-none"
+                                                               t-att-value="'%s-%s' % (f.id, v.id)"
+                                                               t-att-checked="('%s-%s' % (f.id, v.id)) in filter_values"/>
+                                                    </label>
+                                                </t>
+                                            </div>
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </form>
+        </xpath>
+    </template>
+
+    <template id="offcanvas_custom_filters" inherit_id="website_sale.o_wsale_offcanvas">
+    <xpath expr="//t[@t-if='opt_wsale_filter_price and (opt_wsale_attributes or opt_wsale_attributes_top)']" position="before">
+
+        <t t-if="custom_filters">
+            <form class="js_filters accordion accordion-flush d-flex flex-column" method="get">
+                <input t-if="category" type="hidden" name="category" t-att-value="category.id"/>
+                <input type="hidden" name="search" t-att-value="search"/>
+                <input type="hidden" name="order" t-att-value="order"/>
+
+                <t t-foreach="custom_filters.items()" t-as="item">
+                    <t t-set="f" t-value="item[0]"/>
+                    <t t-set="values" t-value="item[1]"/>
+
+                    <t t-if="values and len(values) > 0">
+                        <t t-set="_status" t-value="'inactive'"/>
+                        <t t-foreach="values" t-as="v">
+                            <t t-if="('%s-%s' % (f.id, v.id)) in filter_values">
+                                <t t-set="_status" t-value="'active'"/>
+                            </t>
+                        </t>
+
+                        <div t-attf-class="accordion-item {{(_status == 'active') and 'order-1' or 'order-2'}}">
+                            <h2 class="accordion-header mb-0" t-attf-id="o_wsale_offcanvas_custom_filter_{{f.id}}_header">
+                                <button t-attf-class="o_wsale_offcanvas_title accordion-button rounded-0 {{ _status == 'inactive' and 'collapsed'}}"
+                                        type="button"
+                                        t-att-data-status="_status"
+                                        data-bs-toggle="collapse"
+                                        t-attf-data-bs-target="#o_wsale_offcanvas_custom_filter_{{f.id}}"
+                                        t-att-aria-expanded="_status == 'active' and 'true' or 'false'"
+                                        t-attf-aria-controls="o_wsale_offcanvas_custom_filter_{{f.id}}">
+                                    <b t-esc="f.name"/>
+                                </button>
+                            </h2>
+                            <div t-attf-id="o_wsale_offcanvas_custom_filter_{{f.id}}"
+                                 t-attf-class="accordion-collapse collapse {{ _status == 'active' and 'show'}}"
+                                 t-att-aria-expanded="_status == 'active' and 'true' or 'false'"
+                                 t-attf-aria-labelledby="o_wsale_offcanvas_custom_filter_{{f.id}}_header">
+
+                                <div class="accordion-body pt-0">
+                                    <t t-if="f.type == 'radio'">
+                                        <div class="list-group list-group-flush">
+                                            <t t-foreach="values" t-as="v">
+                                                <div class="list-group-item border-0 ps-0 pb-0">
+                                                    <div class="form-check mb-1">
+                                                        <input type="checkbox" name="filter"
+                                                               class="form-check-input"
+                                                               t-att-id="'offcanvas_custom_%s-%s' % (f.id, v.id)"
+                                                               t-att-value="'%s-%s' % (f.id, v.id)"
+                                                               t-att-checked="'checked' if ('%s-%s' % (f.id, v.id)) in filter_values else None"/>
+                                                        <label class="form-check-label fw-normal"
+                                                               t-att-for="'offcanvas_custom_%s-%s' % (f.id, v.id)"
+                                                               t-esc="v.name"/>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </div>
+                                    </t>
+
+                                    <t t-if="f.type == 'color'">
+                                        <div class="pt-1 pb-3">
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <t t-foreach="values" t-as="v">
+                                                    <label t-attf-style="width: 24px; height: 24px; background-color: #{v.html_color or 'e9ecef'}; border-radius: 50%; cursor: pointer; border: 2px solid #{'#0d6efd' if ('%s-%s' % (f.id, v.id)) in filter_values else 'transparent'}"
+                                                           class="position-relative"
+                                                           t-att-title="v.name">
+                                                        <input type="checkbox" name="filter"
+                                                               class="position-absolute opacity-0"
+                                                               t-att-id="'offcanvas_color_%s-%s' % (f.id, v.id)"
+                                                               t-att-value="'%s-%s' % (f.id, v.id)"
+                                                               t-att-checked="'checked' if ('%s-%s' % (f.id, v.id)) in filter_values else None"/>
+                                                        <t t-if="('%s-%s' % (f.id, v.id)) in filter_values">
+                                                            <i class="oi oi-check text-white position-absolute top-50 start-50 translate-middle" style="font-size: 10px;"/>
+                                                        </t>
+                                                    </label>
+                                                </t>
+                                            </div>
+                                        </div>
+                                    </t>
+
+                                    <t t-if="f.type == 'select'">
+                                        <div class="list-group list-group-flush">
+                                            <t t-foreach="values" t-as="v">
+                                                <div class="list-group-item border-0 ps-0 pb-0">
+                                                    <div class="form-check mb-1">
+                                                        <input type="radio" name="filter"
+                                                               class="form-check-input"
+                                                               t-att-id="'offcanvas_select_%s-%s' % (f.id, v.id)"
+                                                               t-att-value="'%s-%s' % (f.id, v.id)"
+                                                               t-att-checked="'checked' if ('%s-%s' % (f.id, v.id)) in filter_values else None"/>
+                                                        <label class="form-check-label fw-normal"
+                                                               t-att-for="'offcanvas_select_%s-%s' % (f.id, v.id)"
+                                                               t-esc="v.name"/>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </div>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </form>
+        </t>
+    </xpath>
+</template>
+</odoo>
