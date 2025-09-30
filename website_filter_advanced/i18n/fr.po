@@ -1,100 +1,111 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-#   * website_filter_advanced
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0+e\n"
+"Project-Id-Version: Odoo Server 17.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-22 11:43+0000\n"
-"PO-Revision-Date: 2025-09-22 11:43+0000\n"
+"POT-Creation-Date: 2025-09-29 11:44+0000\n"
+"PO-Revision-Date: 2025-09-29 11:44+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: website_filter_advanced
+#: model_terms:ir.ui.view,arch_db:website_filter_advanced.products_custom_filters
+msgid "<option value=\"\">Select...</option>"
+msgstr "<option value=\"\">Sélectionner...</option>"
 
 #. module: website_filter_advanced
 #: model_terms:ir.ui.view,arch_db:website_filter_advanced.products_custom_filters
 msgid ""
 "<small class=\"mx-auto\">\n"
-"                            <b>Clear Filters</b>\n"
-"                        </small>\n"
-"                        <i class=\"oi oi-close\"/>"
-msgstr "<small class=\"mx-auto\">\n                            <b>Borrar filtros</b>\n                        </small>\n                        <i class=\"oi oi-close\"/>"
+"                        <b>Clear Filters</b>\n"
+"                    </small>\n"
+"                    <i class=\"oi oi-close\"/>"
+msgstr ""
+"<small class=\"mx-auto\">\n"
+"                        <b>Réinitialiser les filtres</b>\n"
+"                    </small>\n"
+"                    <i class=\"oi oi-close\"/>"
 
 #. module: website_filter_advanced
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value__html_color
 #: model:ir.model.fields.selection,name:website_filter_advanced.selection__product_filter__type__color
 msgid "Color"
-msgstr "Color"
+msgstr "Couleur"
 
 #. module: website_filter_advanced
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value__color
 msgid "Color Index"
-msgstr "Índice de color"
+msgstr "Indice de couleur"
 
 #. module: website_filter_advanced
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter__company_id
 msgid "Company"
-msgstr "Compañía"
+msgstr "Société"
 
 #. module: website_filter_advanced
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter__create_uid
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_line__create_uid
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value__create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr "Créé par"
 
 #. module: website_filter_advanced
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter__create_date
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_line__create_date
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value__create_date
 msgid "Created on"
-msgstr "Creado el"
+msgstr "Créé le"
 
 #. module: website_filter_advanced
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter__display_name
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_line__display_name
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value__display_name
 msgid "Display Name"
-msgstr "Nombre mostrado"
+msgstr "Nom affiché"
 
 #. module: website_filter_advanced
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_line__filter_id
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value__filter_id
 #: model_terms:ir.ui.view,arch_db:website_filter_advanced.view_product_filter_form
 msgid "Filter"
-msgstr "Filtro"
+msgstr "Filtre"
+
+#. module: website_filter_advanced
+#: model_terms:ir.ui.view,arch_db:website_filter_advanced.view_product_filter_list
+msgid "Filter List"
+msgstr "Liste des filtres"
 
 #. module: website_filter_advanced
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter__name
 msgid "Filter name"
-msgstr "Nombre del filtro"
+msgstr "Nom du filtre"
 
 #. module: website_filter_advanced
 #: model_terms:ir.ui.view,arch_db:website_filter_advanced.view_product_filter_value_form
-#: model_terms:ir.ui.view,arch_db:website_filter_advanced.view_product_filter_value_tree
+#: model_terms:ir.ui.view,arch_db:website_filter_advanced.view_product_filter_value_list
 msgid "Filter values"
-msgstr "Valores de filtro"
+msgstr "Valeurs du filtre"
 
 #. module: website_filter_advanced
 #: model:ir.actions.act_window,name:website_filter_advanced.action_product_filter
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_product__filter_line_ids
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_template__filter_line_ids
 #: model:ir.ui.menu,name:website_filter_advanced.menu_product_filter
-#: model_terms:ir.ui.view,arch_db:website_filter_advanced.view_product_filter_tree
 #: model_terms:ir.ui.view,arch_db:website_filter_advanced.view_product_template_form_inherit_filters
 msgid "Filters"
-msgstr "Filtros"
+msgstr "Filtres"
 
 #. module: website_filter_advanced
 #: model:ir.model.fields,help:website_filter_advanced.field_product_filter_value__html_color
 msgid ""
 "Here you can set a specific HTML color index (e.g. #ff0000) to display the "
 "color if the attribute type is 'Color'."
-msgstr "Aquí puede establecer un código de color HTML específico (por ejemplo #ff0000) para mostrar el color si el tipo de atributo es «Color»."
+msgstr ""
+"Ici, vous pouvez définir un code couleur HTML spécifique (ex. : #ff0000) pour afficher la couleur si le type d’attribut est « Couleur »."
 
 #. module: website_filter_advanced
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter__id
@@ -104,74 +115,72 @@ msgid "ID"
 msgstr "ID"
 
 #. module: website_filter_advanced
-#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter____last_update
-#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_line____last_update
-#: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value____last_update
-msgid "Last Modified on"
-msgstr "Última modificación el"
-
-#. module: website_filter_advanced
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter__write_uid
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_line__write_uid
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value__write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr "Mis à jour par"
 
 #. module: website_filter_advanced
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter__write_date
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_line__write_date
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value__write_date
 msgid "Last Updated on"
-msgstr "Última actualización el"
+msgstr "Mis à jour le"
 
 #. module: website_filter_advanced
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter__value_ids
 msgid "Possible values"
-msgstr "Valores posibles"
+msgstr "Valeurs possibles"
 
 #. module: website_filter_advanced
 #: model:ir.model,name:website_filter_advanced.model_product_template
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_line__product_id
 msgid "Product"
-msgstr "Producto"
+msgstr "Produit"
 
 #. module: website_filter_advanced
 #: model:ir.model,name:website_filter_advanced.model_product_filter
 msgid "Product Filter"
-msgstr "Filtro de producto"
+msgstr "Filtre de produit"
 
 #. module: website_filter_advanced
 #: model:ir.model,name:website_filter_advanced.model_product_filter_line
 msgid "Product Filter Line"
-msgstr "Línea de filtro de producto"
+msgstr "Ligne de filtre de produit"
 
 #. module: website_filter_advanced
 #: model:ir.model,name:website_filter_advanced.model_product_filter_value
 msgid "Product Filter Value"
-msgstr "Valor de filtro de producto"
+msgstr "Valeur de filtre de produit"
 
 #. module: website_filter_advanced
 #: model:ir.model.fields.selection,name:website_filter_advanced.selection__product_filter__type__radio
 msgid "Radio"
-msgstr "Radio"
+msgstr "Bouton radio"
+
+#. module: website_filter_advanced
+#: model:ir.model.fields.selection,name:website_filter_advanced.selection__product_filter__type__select
+msgid "Select"
+msgstr "Sélection"
 
 #. module: website_filter_advanced
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value__sequence
 msgid "Sequence"
-msgstr "Secuencia"
+msgstr "Séquence"
 
 #. module: website_filter_advanced
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter__type
 msgid "Type"
-msgstr "Tipo"
+msgstr "Type"
 
 #. module: website_filter_advanced
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_value__name
 msgid "Value"
-msgstr "Valor"
+msgstr "Valeur"
 
 #. module: website_filter_advanced
 #: model:ir.model.fields,field_description:website_filter_advanced.field_product_filter_line__value_ids
 #: model_terms:ir.ui.view,arch_db:website_filter_advanced.view_product_filter_form
 msgid "Values"
-msgstr "Valores"
+msgstr "Valeurs"
